@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SignupSystem</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <title>Leo Baeck Signup System | <%= yield(:title) %></title>
+  <%= render 'layouts/stylesheets' %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
