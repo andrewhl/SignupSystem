@@ -1,0 +1,15 @@
+a, a:link:after, a:visited:after {
+	content: none;
+}
+nav {
+	li {
+		display: inline-block;
+	}
+}
+
+ul.users {
+  margin-top: 1em;
+  li {
+    list-style: none;
+  }
+}
