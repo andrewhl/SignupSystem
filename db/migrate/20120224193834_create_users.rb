@@ -2,6 +2,8 @@ class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
       t.string :email
+      t.string :first_name
+      t.string :last_name
       t.string :mother_first_name
       t.string :mother_last_name
       t.string :mother_email
@@ -16,9 +18,11 @@ class CreateUsers < ActiveRecord::Migration
       t.string :city
       t.string :postal_code
       t.string :username
+      t.string :campus
       t.string :remember_token
-      t.boolean :teacher_boolean
-      t.boolean :admin_boolean
+      t.string :password_digest
+      t.boolean :teacher, default: false
+      t.boolean :admin, default: false
 
       t.timestamps
     end

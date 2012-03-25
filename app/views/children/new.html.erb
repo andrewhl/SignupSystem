@@ -1,0 +1,11 @@
+<% provide(:title, 'Register children') %>
+<h2>Register your children</h2>
+
+<%= form_for(@child) do |f| %>
+<table>
+	<%= render 'fields', f: f %>
+	  <div class="actions">
+	    <%= f.submit "Register new child" %>
+	  </div>
+	<% end %>
+</table>

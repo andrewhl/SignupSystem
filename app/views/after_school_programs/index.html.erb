@@ -1,0 +1,25 @@
+<% provide :title, 'After School Programs' %>
+<h2>All programs</h2>
+
+<table class="programs">
+	<tr>
+		<th>Program Name</th>
+		<th>Day</th>
+		<th>Dates</th>
+		<th>Price</th>
+		<th>Max Registrants</th>
+		<th>Status</th>
+		<th>Delete?</th>
+	</tr>
+	<% @programs.each do |program| %>
+		<tr>
+			<td><%= program.program_name %></td>
+			<td><%= program.day %></td>
+			<td><%= program.dates %></td>
+			<td><%= program.price %></td>
+			<td><%= program.max_registrants %></td>
+			<td><%= program.status %></td>
+			<td><%= link_to "delete", program, method: :delete, confirm: "Are you sure?" %></td>
+		</tr>
+	<% end %>
+</table>

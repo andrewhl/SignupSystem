@@ -39,6 +39,16 @@ describe "Authentication" do
       
       it { should_not have_link('Sign in', href: signin_path) }
       
+      describe "when attempting to visit the new user page" do
+        before { get new_user_path }
+        specify { response.should redirect_to(root_path) }
+      end
+      
+      describe "when attempting to visit the signup page" do
+        before { get signup_path }
+        specify { response.should redirect_to(root_path) }
+      end
+      
       describe "followed by signout" do
         before { click_link "Sign out" }
         it { should have_link('Sign in') }
@@ -60,10 +70,24 @@ describe "Authentication" do
       
       describe "when attempting to visit a protected page" do
          before { edit_user(user) } # Method defined in /spec/support/utilities.rb
+         
          describe "after signing in" do
 
           it "should render the desired protected page" do
             page.should have_selector('title', text: 'Edit user')
+          end
+          
+          describe "when signing in again" do
+            before do
+              visit signin_path
+              fill_in "Email",    with: user.email
+              fill_in "Password", with: user.password
+              click_button "Sign in"
+            end
+            
+            it "should render the default (profile) page" do
+              page.should have_selector('title', text: user.first_name)
+            end
           end
         end
       end
@@ -107,6 +131,15 @@ describe "Authentication" do
       describe "submitting a DELETE request to the Users#destroy action" do
         before { delete user_path(user) }
         specify { response.should redirect_to(root_path) }
+      end
+      
+      describe "in the ASP controller" do # After School Programs
+        
+        describe "visiting the create page" do
+          before { get new_after_school_program_path }
+          specify { response.should redirect_to(root_path) }
+        end
+        
       end
     end
   end

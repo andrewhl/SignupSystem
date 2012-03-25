@@ -1,0 +1,8 @@
+<% provide :title, 'After School Programs Create Form' %>
+<h2>Create programs here</h2>
+<%= form_for(@program) do |f| %>
+<%= render 'fields', f: f %>
+  <table class="actions">
+    <%= f.submit "Create program" %>
+  </table>
+<% end %>

@@ -1,0 +1,36 @@
+<h2>Update programs</h2>
+<% @programs.each do |program| %>
+	<%= form_for(program) do |f| %>
+	<table>
+		<tr>
+		  <td><%= f.label :program_name %></td>
+		  <td><%= f.text_field :program_name %></td>
+		</tr>
+		<tr>
+		  <td><%= f.label :day %></td>
+		  <td><%= f.text_field :day %></td>
+		</tr>
+		<tr>
+		  <td><%= f.label :price %></td>
+		  <td><%= f.text_field :price %></td>
+		</tr>
+		<tr>
+		  <td><%= f.label :status %></td>
+		  <td><%= f.text_field :status %></td>
+		</tr>
+		<tr>
+		  <td><%= f.label :dates %></td>
+		  <td><%= f.text_field :dates %></td>
+		</tr>
+		<tr>
+		  <td><%= f.label :max_registrants %></td>
+		  <td><%= f.text_field :max_registrants %></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><%= f.submit "Update" %></td>
+	  	</tr>
+	</table>
+
+	<% end %>
+<% end %>

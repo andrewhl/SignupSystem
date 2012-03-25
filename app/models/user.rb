@@ -4,6 +4,8 @@
 #
 #  id                :integer         not null, primary key
 #  email             :string(255)
+#  first_name        :string(255)
+#  last_name         :string(255)
 #  mother_first_name :string(255)
 #  mother_last_name  :string(255)
 #  mother_email      :string(255)
@@ -18,9 +20,11 @@
 #  city              :string(255)
 #  postal_code       :string(255)
 #  username          :string(255)
+#  campus            :string(255)
 #  remember_token    :string(255)
-#  teacher_boolean   :boolean
-#  admin_boolean     :boolean
+#  password_digest   :string(255)
+#  teacher           :boolean         default(FALSE)
+#  admin             :boolean         default(FALSE)
 #  created_at        :datetime        not null
 #  updated_at        :datetime        not null
 #
@@ -45,6 +49,7 @@ class User < ActiveRecord::Base
                   :password_confirmation
                   
   has_secure_password
+  has_many :children
   before_save :create_remember_token
   
   validates :first_name, presence: true, length: { maximum: 50 }

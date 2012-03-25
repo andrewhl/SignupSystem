@@ -4,14 +4,16 @@ class CreateChildren < ActiveRecord::Migration
       t.string :first_name
       t.string :last_name
       t.string :health_card
-      t.text :medical
       t.string :grade
       t.string :class
       t.string :campus
-      t.integer :parent_id
+      t.string :shoe_size
       t.string :emergency_first_name
       t.string :emergency_last_name
       t.string :emergency_phone
+      t.integer :parent_id
+      t.text :medical
+      t.text :pickup_info
 
       t.timestamps
     end
