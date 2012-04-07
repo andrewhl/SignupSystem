@@ -8,7 +8,11 @@
 #  price           :string(255)
 #  status          :string(255)
 #  dates           :string(255)
+#  payable_to      :string(255)
+#  campus          :string(255)
+#  notes           :text
 #  max_registrants :integer
+#  min_registrants :integer
 #  created_at      :datetime        not null
 #  updated_at      :datetime        not null
 #

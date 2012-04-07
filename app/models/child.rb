@@ -6,17 +6,18 @@
 #  first_name           :string(255)
 #  last_name            :string(255)
 #  health_card          :string(255)
-#  medical              :text
 #  grade                :string(255)
-#  class                :string(255)
+#  child_class          :string(255)
 #  campus               :string(255)
-#  parent_id            :integer
+#  shoe_size            :string(255)
 #  emergency_first_name :string(255)
 #  emergency_last_name  :string(255)
 #  emergency_phone      :string(255)
+#  user_id              :integer
+#  medical              :text
+#  pickup_info          :text
 #  created_at           :datetime        not null
 #  updated_at           :datetime        not null
-#  shoe_size            :string(255)
 #
 
 class Child < ActiveRecord::Base
