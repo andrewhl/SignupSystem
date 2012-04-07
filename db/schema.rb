@@ -62,8 +62,6 @@ ActiveRecord::Schema.define(:version => 20120406060526) do
     t.datetime "updated_at",           :null => false
   end
 
-  add_index "children", ["user_id"], :name => "index_children_on_user_id", :unique => true
-
   create_table "lunch_items", :force => true do |t|
     t.string   "item_name"
     t.string   "option_name"

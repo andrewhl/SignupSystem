@@ -4,7 +4,7 @@ SignupSystem::Application.routes.draw do
 
   get "childs/create"
 
-  resources :users, :after_school_programs, :children, :asp_registration
+  resources :users, :after_school_programs, :children, :asp_registrations
   resources :sessions, only: [:new, :create, :destroy]
   
   match '/signup',  to: 'users#new'

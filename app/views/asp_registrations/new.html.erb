@@ -1,14 +1,25 @@
-<% provide(:title, 'Register children') %>
-<h2>Register your children</h2>
+<% provide :title, 'After School Programs Registration Form' %>
+<h2>Sign up for After School Programs</h2>
 
-<%= form_for(@child) do |f| %>
-<table>
-	<%= render 'fields', f: f %>
-</table>
-	  <div class="actions">
-	    <%= f.submit "Register new child" %>
-	  </div>
+<% @programs.each do |program| %>
+<td><%= program.program_name %></td>
+<% end %>
+
+
+
+<%= form_for(@registration) do |f| %>	
+  <table class="actions">
+	<% @programs.each do |program| %>
+		<tr>
+			<td><%= program.program_name %></td>
+			<% current_user.children.each do |child| %>
+				<td><%= f.check_box "child", "#{child.first_name}" %></td>
+			<% end %>
+		</tr>
 	<% end %>
+    <%= f.submit "Sign up" %>
+  </table>
+<% end %>
 
 <hr>
 <h2>Your children</h2>
@@ -42,4 +53,3 @@
 	</tr>
 <% end %>
 </table>
-

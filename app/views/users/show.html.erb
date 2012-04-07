@@ -23,4 +23,10 @@
 
 <p><strong>Postal code:</strong> <%= @user.postal_code %></p>
 
+<% if current_user.admin? %>
+	<p><strong>Admin:</strong> true</p>
+<% end %>
+
+<% puts current_user.inspect %>
+
 <p>Click on "Settings" above to change your information.</p>
