@@ -4,8 +4,9 @@
 <%= form_for(@user) do |f| %>
 <table>
 	<%= render 'fields', f: f %>
-	  <div class="actions">
-	    <%= f.submit "Sign up" %>
-	  </div>
-	<% end %>
+
 </table>
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>

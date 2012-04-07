@@ -4,8 +4,12 @@
 <%= form_for(@child) do |f| %>
 <table>
 	<%= render 'fields', f: f %>
+</table>
 	  <div class="actions">
 	    <%= f.submit "Register new child" %>
 	  </div>
 	<% end %>
-</table>
+
+<%= current_user.children %>
+
+

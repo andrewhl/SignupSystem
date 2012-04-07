@@ -11,14 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120324010841) do
-
-  create_table "after_school_program_registrations", :force => true do |t|
-    t.integer  "child_id"
-    t.integer  "after_school_program_id"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
-  end
+ActiveRecord::Schema.define(:version => 20120406060526) do
 
   create_table "after_school_programs", :force => true do |t|
     t.string   "day"
@@ -26,15 +19,20 @@ ActiveRecord::Schema.define(:version => 20120324010841) do
     t.string   "price"
     t.string   "status"
     t.string   "dates"
+    t.string   "payable_to"
+    t.string   "campus"
+    t.text     "notes"
     t.integer  "max_registrants"
+    t.integer  "min_registrants"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
 
   create_table "asp_registrations", :force => true do |t|
     t.integer  "child_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "after_school_program_id"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
   end
 
   create_table "challahs", :force => true do |t|
@@ -51,17 +49,20 @@ ActiveRecord::Schema.define(:version => 20120324010841) do
     t.string   "last_name"
     t.string   "health_card"
     t.string   "grade"
-    t.string   "class"
+    t.string   "child_class"
     t.string   "campus"
     t.string   "shoe_size"
     t.string   "emergency_first_name"
     t.string   "emergency_last_name"
     t.string   "emergency_phone"
-    t.integer  "parent_id"
+    t.integer  "user_id"
     t.text     "medical"
+    t.text     "pickup_info"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
   end
+
+  add_index "children", ["user_id"], :name => "index_children_on_user_id", :unique => true
 
   create_table "lunch_items", :force => true do |t|
     t.string   "item_name"

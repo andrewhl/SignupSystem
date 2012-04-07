@@ -3,7 +3,7 @@
 
 <%= form_for(@user) do |f| %>
 <table>
-
+  <%= render 'shared/error_messages' %>
   <%= render 'update_fields', f: f %>
 </table>
   <div class="actions">

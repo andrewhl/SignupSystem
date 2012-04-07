@@ -6,6 +6,7 @@ class ChildrenController < ApplicationController
   
   def create
     @child = Child.new(params[:child])
+    @child.user_id = current_user.id
     if @child.save
       flash[:success] = "Your child was entered into the system successfully."
       redirect_to new_child_path

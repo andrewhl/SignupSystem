@@ -20,17 +20,20 @@
 #
 
 class Child < ActiveRecord::Base
-  belongs_to :user
+
   
   attr_accessible :first_name,
                   :last_name,
                   :health_card,
                   :medical,
                   :grade,
-                  :class,
+                  :child_class,
                   :campus,
                   :emergency_first_name,
                   :emergency_last_name,
                   :emergency_phone,
                   :shoe_size
+  
+    belongs_to :user
+    has_many :asp_registrations
 end

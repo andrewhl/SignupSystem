@@ -4,6 +4,7 @@ gem 'rails', '3.2.1'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
+gem 'populator'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

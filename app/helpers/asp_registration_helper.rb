@@ -1,0 +1,2 @@
+module AspRegistrationHelper
+end

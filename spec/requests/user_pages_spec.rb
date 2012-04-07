@@ -115,7 +115,7 @@ describe "User pages" do
         fill_in "Last name",        with: "User"
         fill_in "Email",            with: "sample@example.com"
         fill_in "Password",         with: "foobar"
-        fill_in "Confirmation",     with: "foobar"
+        fill_in "Password confirmation",     with: "foobar"
       end
       
       describe "after saving the user" do
@@ -170,7 +170,7 @@ describe "User pages" do
         fill_in "First name",   with: new_name
         fill_in "Email",        with: new_email
         fill_in "Password",     with: user.password
-        fill_in "Confirmation", with: user.password
+        fill_in "Password confirmation", with: user.password
         click_button "Update"
       end
 

@@ -20,5 +20,7 @@ class AfterSchoolProgram < ActiveRecord::Base
                   :status,
                   :dates,
                   :max_registrants
+                  
+  has_many :asp_registrations
   
 end

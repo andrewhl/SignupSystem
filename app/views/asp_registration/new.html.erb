@@ -1,0 +1,18 @@
+<% provide :title, 'After School Programs Registration Form' %>
+<h2>Sign up for After School Programs</h2>
+
+<% @programs.each do |program| %>
+<td><%= program.program_name %></td>
+<% end %>
+
+<%= form_for(@registration) do |f| %>	
+  <table class="actions">
+	<% @programs.each do |program| %>
+		<tr>
+			<td><%= program.program_name %></td>
+			<td><%= f.check_box "program", "" %></td>
+		</tr>
+	<% end %>
+    <%= f.submit "Create program" %>
+  </table>
+<% end %>

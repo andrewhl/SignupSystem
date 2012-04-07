@@ -1,12 +1,17 @@
 SignupSystem::Application.routes.draw do
   
-  resources :users, :after_school_programs, :children
+  get "childs/new"
+
+  get "childs/create"
+
+  resources :users, :after_school_programs, :children, :asp_registration
   resources :sessions, only: [:new, :create, :destroy]
   
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
   match '/after_school_programs/edit_all', to: 'after_school_programs#edit_all'
+  match '/programs', to: 'pages#programs'
 
   resources :pages do
     collection do

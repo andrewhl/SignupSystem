@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe AfterSchoolProgram do
   before do 
-    @program = AfterSchoolProgram.new(program_name: "Sample Program", price: "User", status: "Active",
+    @program = AfterSchoolProgram.new(program_name: "Sample Program", price: 10, status: "Active",
                      dates: "May 1st", max_registrants: 10)
   end
   

@@ -6,6 +6,7 @@
 		<li><%= link_to "Users", users_path %></li>
         <li><%= link_to "Profile", current_user %></li>
 		<li><%= link_to "Settings", edit_user_path(current_user) %></li>
+		<li><%= link_to "Programs", programs_path %></li>
       <% end %>
 	  <% if (signed_in?) and (current_user.admin?) %>
 		<li><%= link_to "ASP", after_school_programs_path %></li>
